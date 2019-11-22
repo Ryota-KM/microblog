@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import BlogListView
+from blog.views import BlogListView, BlogDetailView
 
 urlpatterns = [
     # path('<URL>', views(関数), ニックネーム)
     # http://localhost:8000/<...> : index
     path('', BlogListView.as_view(), name="index"),
+    # http://localhost:8000/20
+    # 20 -> pk : pk = 20
+    path('<int:pk>', BlogDetailView.as_view(), name="detail"),
     path('admin/', admin.site.urls),
 ]
