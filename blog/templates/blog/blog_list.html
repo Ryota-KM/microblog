@@ -1,16 +1,12 @@
-<html>
-<head>
-<title>MicroBlog</title>
-</head>
-<body>
-<h1>MicroBlog</h1>
-<div>
-{% for blog in object_list %}
-<div>
-{{ blog.content }}<br/>
-{{ blog.posted_date }}
-<div>
-{% endfor %}
-</div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block body %}
+
+  {% for blog in object_list %}
+  <div>
+  {{ blog.content }}<br/>
+  {{ blog.posted_date }}
+  <div>
+  {% endfor %}
+
+{% endblock %}
