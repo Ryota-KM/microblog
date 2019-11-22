@@ -1,0 +1,35 @@
+コンパイラ: xcode
+python: home brew
+pythonのバージョン: python -V
+brew install python3
+
+virtualenv
+任意のディレクトリで
+mkdir test1
+cd test1
+virtualenv test1
+
+virtualenvに入ったらアクティベートする
+source ./bin/activate
+コンソールの先頭に(test1)の表示が現れる
+抜ける時は
+deactivate
+
+pythonのバージョンを指定してvirtualenvを作成してみる
+sudo virtualenv -p /usr/bin/python2.7 test2
+binの下にpythonがない場合…
+まずはローカルマシンにインストールされているpythonの一覧を取得
+which python*
+または、
+which python3
+which python2
+など
+パスを指定して再びvirtualenv
+生成されたvirtualenvディレクトリの下のbinに移動すると指定したpythonのバージョンがインストールされていることがわかる
+
+django等インストール済みのパッケージを確認する
+[project]/lib/python3.7/site-packages
+に入っている。
+
+djangoが入っているか確認
+ django-admin —version
