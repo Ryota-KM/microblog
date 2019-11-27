@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Blog(models.Model):
 
     content = models.CharField(max_length=140)
