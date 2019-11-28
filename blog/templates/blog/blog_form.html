@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block body %}
+<h1>新規作成</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  <table class="table">
+    {{ form }}
+  </table>
+  <button class="primary" value="submit">送信</button>
+</form>
+{% endblock %}

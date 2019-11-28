@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import BlogListView, BlogDetailView
+from blog.views import BlogListView, BlogDetailView, BlogCreateView
 
 urlpatterns = [
     # path('<URL>', views(関数), ニックネーム)
@@ -24,5 +24,6 @@ urlpatterns = [
     # http://localhost:8000/20
     # 20 -> pk : pk = 20
     path('<int:pk>', BlogDetailView.as_view(), name="detail"),
+    path('create', BlogCreateView.as_view(), name="create"),
     path('admin/', admin.site.urls),
 ]
