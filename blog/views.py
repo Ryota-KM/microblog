@@ -21,6 +21,7 @@ class BlogCreateView(CreateView):
     # 必須 (BlogFormで定義済みの為、不要)
     # fields = ["content"]
     success_url = reverse_lazy("index")
+    template_name = "blog/blog_create_form.html"
 
 
 class BlogUpdateView(UpdateView):
@@ -28,6 +29,7 @@ class BlogUpdateView(UpdateView):
     form_class = BlogForm
     # (BlogFormで定義済みの為、不要)
     # fields = ["content"]
+    template_name = "blog/blog_update_form.html"
 
     def get_success_url(self):
         blog_pk = self.kwargs['pk']
