@@ -4,6 +4,7 @@ from django.views.generic import DetailView
 from django.views.generic import CreateView, UpdateView
 
 from .models import Blog
+from .forms import BlogForm
 
 
 class BlogListView(ListView):
@@ -16,14 +17,17 @@ class BlogDetailView(DetailView):
 
 class BlogCreateView(CreateView):
     model = Blog
-    # 必須
-    fields = ["content"]
+    form_class = BlogForm
+    # 必須 (BlogFormで定義済みの為、不要)
+    # fields = ["content"]
     success_url = reverse_lazy("index")
 
 
 class BlogUpdateView(UpdateView):
     model = Blog
-    fields = ["content"]
+    form_class = BlogForm
+    # (BlogFormで定義済みの為、不要)
+    # fields = ["content"]
 
     def get_success_url(self):
         blog_pk = self.kwargs['pk']
