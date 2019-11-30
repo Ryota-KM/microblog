@@ -5,10 +5,10 @@
     <div class="post-preview">
       <a href="post.html">
         <h2 class="post-title">
-          {{ object.content }}
+          {{ blog.content }}
         </h2>
       </a>
-      <p class="post-meta">{{ object.posted_date }}</p>
+      <p class="post-meta">{{ blog.posted_date }}</p>
     </div>
     <a href="{% url 'update' object.id %}" class="btn btn-primary">編集</a>
     <a href="{% url 'delete' object.id %}" class="btn btn-danger">削除</a>
