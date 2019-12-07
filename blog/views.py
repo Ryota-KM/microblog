@@ -12,6 +12,7 @@ from .forms import BlogForm
 class BlogListView(ListView):
     model = Blog
     context_object_name = "blogs"
+    paginate_by = 3
 
 
 class BlogDetailView(DetailView):
