@@ -10,8 +10,10 @@
       </a>
       <p class="post-meta">{{ blog.posted_date }}</p>
     </div>
+    {% if is_authenticated %}
     <a href="{% url 'update' object.id %}" class="btn btn-primary">編集</a>
     <a href="{% url 'delete' object.id %}" class="btn btn-danger">削除</a>
+    {% endif %}
   </div>
 </div>
 

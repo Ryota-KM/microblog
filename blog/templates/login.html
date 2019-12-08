@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block body %}
+
+<form action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  <table class="table">
+    {{ form }}
+  </table>
+  <button class="btn btn-primary" type="submit">ログイン</button>
+</form>
+{% endblock %}
