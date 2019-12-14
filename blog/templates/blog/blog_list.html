@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% block body %}
 
+{{ title }}
 {% if user.is_authenticated %}
 <p><a href="{% url 'create' %}" class="btn btn-primary">New</a></p>
 {% endif %}

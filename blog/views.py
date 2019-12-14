@@ -16,6 +16,12 @@ class BlogListView(ListView):
     context_object_name = "blogs"
     paginate_by = 3
 
+    # クラスベース汎用ビューに定義されているメソッドをオーバーライドし、任意の変数をテンプレートに渡す
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # はじめに継承元のメソッドを呼び出す
+        context["title"] = "一覧ページ"
+        return context
+
 
 class BlogDetailView(DetailView):
     model = Blog
